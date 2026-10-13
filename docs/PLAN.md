@@ -4,11 +4,11 @@ Record a timelapse every session and post a devlog after each one. Hours only co
 
 | Days | Goal | Done when |
 |---|---|---|
-| 1 | Pick parts, finalise the layout (keyboard-layout-editor.com), install KiCad | Layout JSON + BOM done |
-| 2–4 | **Keyboard schematic**: RP2040 (or Pico), key matrix + diodes, USB-C | ERC passes |
+| 1 | Pick parts, measure the screen + Pi, sketch the case size, finalise the key layout | Layout + BOM done |
+| 2–4 | **Keyboard schematic**: Pico/RP2040, key matrix + diodes, USB, I2S mic + amp, header to Pi | ERC passes |
 | 5–7 | **PCB layout**: place switches, route, ground pour | DRC passes, Gerbers exported, 3D render |
 | 8–10 | **Case CAD**: Pi 5 + screen + keyboard + battery | STEP + STL exported, renders |
-| 11–12 | **Firmware + software**: KMK keymap, Pi chat app with Ollama | Tested on PC / emulator |
+| 11–12 | **Firmware + software**: KMK keymap, Pi chat app (Ollama + whisper.cpp + Piper) | Tested on PC |
 | 13 | Wiring diagram, README polish, photos and renders | |
 | 14 | Final devlog, **submit for funding** | |
 

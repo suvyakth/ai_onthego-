@@ -1,23 +1,26 @@
 # ai-on_the_go!
 
-A handheld cyberdeck that runs an AI model **offline**: a custom keyboard, a screen and a Raspberry Pi 5, all in a 3D-printed case.
+A **pocket-sized** handheld that runs an AI model **offline**, with a thumb keyboard and voice control (talk to it, it talks back). Think PocketTerm / BlackBerry, with a local LLM inside.
 
 Hack Club Stardance hardware project by @suvyakthacharya.
 
 ## How it works
 
 ```
-[Custom keyboard PCB] --USB--> [Raspberry Pi 5, 8GB] --DSI/HDMI--> [Screen]
-   (RP2040, KMK firmware)        (Ollama + local LLM)
+[Thumb-keyboard PCB] --USB--> [Raspberry Pi 5, 8GB] --DSI--> [~4" screen]
+  RP2040 + ~45 tact switches     Ollama (LLM)
+  I2S mic + I2S speaker amp --GPIO--> whisper.cpp (speech->text)
+                                     Piper (text->speech)
                                         ^
-                                 [Battery / UPS HAT]
+                                 [LiPo + 5V boost]
 ```
 
-- **Keyboard:** custom PCB (about a 40% layout) with an RP2040 running KMK firmware. It shows up as a normal USB keyboard.
+- **Keyboard:** custom thumb-keyboard PCB with ~45 small SMD tactile switches (cheap, thin, typeable). An RP2040 runs KMK firmware and shows up as a normal USB keyboard.
+- **Voice:** an I2S MEMS mic (INMP441) and an I2S amp (MAX98357A) + small speaker, broken out on the same PCB and wired to the Pi's GPIO. A push-to-talk key starts listening.
 - **Brain:** a Raspberry Pi 5 (8GB) running [Ollama](https://ollama.com) with a small model (Llama 3.2 3B / Qwen 2.5 3B) for usable speed.
-- **Screen:** a 5–7" Pi display.
+- **Screen:** a ~4" DSI display (for example 720×720), sized to the keyboard width.
 - **Software:** a fullscreen chat app that boots straight into the AI.
-- **Case:** a 3D-printed clamshell or slab enclosure.
+- **Case:** a 3D-printed slab (screen on top, keyboard below), target about 95 × 160 × 30 mm so it fits a pocket.
 
 ## Repo layout
 

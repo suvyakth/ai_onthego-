@@ -32,4 +32,6 @@ Hack Club Stardance hardware project by @suvyakthacharya.
 | `software/` | Chat app running on the Pi |
 | `docs/` | Plan, BOM, photos, wiring |
 
+![Concept](docs/concept.png)
+
 See [docs/PLAN.md](docs/PLAN.md) and [docs/BOM.md](docs/BOM.md).
